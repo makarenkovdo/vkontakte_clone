@@ -1,0 +1,10 @@
+@import './../../../Feed/UI/Scss/FeedMixins.scss';
+
+.stories {
+    @include central;
+    grid-area: c2;
+    height: 230px;
+
+
+
+}

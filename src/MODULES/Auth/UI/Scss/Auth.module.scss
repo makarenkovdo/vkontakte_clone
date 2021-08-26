@@ -1,0 +1,116 @@
+$margLeft: 175px;
+
+.container {
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    grid-template-areas:
+        "h h"
+        "m s"
+        "m r"
+
+        "f f";
+    gap: 2px;
+    background-color: rgb(237, 238, 240);
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.header {
+    display: grid;
+    grid-area: h;
+    height: 34px;
+    width: 100%;
+    justify-items: left;
+    background-color: white;
+    padding: 7px;
+    padding-left: $margLeft;
+
+
+}
+
+.logo {
+    width: 25px;
+    height: 25px;
+    padding: 7px 3px 3px 6px;
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.main {
+    display: grid;
+    grid-area: m;
+    height: 682px;
+    width: 625px;
+    justify-content: center;
+    margin: 20px 10px 0px $margLeft;
+    padding: 20px 20px 20px 20px;
+    background: linear-gradient(90deg, rgb(58, 37, 46), rgb(19, 17, 18));
+    border: 1px solid black;
+    color: blanchedalmond;
+
+}
+
+.input {
+    margin: 6px;
+    border: 1px solid rgb(99, 106, 109);
+    width: 270px;
+    height: 35px;
+}
+
+.button {
+    margin-top: 15px;
+    background-color: rgb(81, 129, 184);
+    width: 100px;
+    height: 35px;
+    color: whitesmoke;
+    border-radius: 5px;
+    border-inline-color: lightblue;
+
+}
+
+.sign {
+    display: grid;
+    grid-area: s;
+    height: 150px;
+    width: 320px;
+    background-color: white;
+    margin: 20px 10px 10px 10px;
+    padding: 20px 20px 20px 20px;
+
+
+
+}
+
+.sign a {
+    margin: 10px;
+    text-decoration: none;
+    font-size: small;
+}
+
+.reg {
+    display: grid;
+    grid-area: r;
+   align-content: flex-start;
+    
+    height: 457px;
+    width: 320px;
+    background-color: white;
+    margin: 20px 10px 10px 10px;
+    padding: 20px 20px 20px 20px;
+
+
+
+}
+
+.footer {
+    display: grid;
+    grid-area: f;
+    height: 50px;
+    width: 100%;
+    justify-items: left;
+    padding: 7px;
+    background-color: blueviolet;
+    border: 1px solid black;
+
+}

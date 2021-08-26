@@ -1,0 +1,29 @@
+nav {
+    display: grid;
+    grid-area: l;
+    align-content: flex-start;
+
+    width: 123px;
+    margin: 10px 0 10px 145px;
+
+    padding: 15px 0px 15px 0px;
+
+}
+
+.navItem {
+    display: grid;
+
+    height: 30px;
+    grid-template-columns: 1fr 8fr;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(230, 230, 235);
+    }
+
+
+}
+
+.icon {
+    color: #6e95c1;
+}

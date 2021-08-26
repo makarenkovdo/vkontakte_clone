@@ -1,0 +1,98 @@
+@import 'FeedMixins';
+
+.feed {
+    display: grid;
+    grid-template-areas:
+        "h h h"
+        "l c1 r"
+        "l c2 r"
+        "l c3 r";
+    background-color: #edeef0;
+
+
+
+
+}
+
+.newsArea {
+
+    grid-area: c3;
+    scroll-behavior: smooth;
+    scroll-snap-type: mandatory;
+    scroll-margin: 100px;
+
+
+
+}
+
+.feedItem {
+    display: grid;
+    grid-template-areas:
+        "avatar title menu"
+        "avatar date menu"
+        "text text text"
+        "image image image"
+        "likesCounter . ."
+        "like commentRepost views";
+    @include central;
+
+}
+
+.avatar {
+    display: grid;
+    grid-area: avatar;
+    border-radius: 50px;
+    width: 50px;
+    overflow: hidden;
+}
+
+.title {
+    display: grid;
+    grid-area: title;
+}
+
+.date {
+    display: grid;
+    grid-area: date;
+}
+
+.menu {
+    display: grid;
+    grid-area: menu;
+}
+
+.text {
+    display: grid;
+    grid-area: text;
+
+}
+
+.image {
+    display: grid;
+    grid-area: image;
+}
+
+.likesCounter {
+    display: grid;
+    grid-area: likesCounter;
+    justify-content: left;
+    justify-items: left;
+    height: 36px;
+}
+
+.like {
+    display: grid;
+    grid-area: like;
+    height: 44px;
+
+}
+
+.commentRepost {
+    display: grid;
+    grid-area: commentRepost;
+}
+
+.views {
+    display: grid;
+    grid-area: views;
+}

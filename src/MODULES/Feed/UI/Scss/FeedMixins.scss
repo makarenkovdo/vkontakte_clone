@@ -1,0 +1,21 @@
+$bgc: white;
+$marginleftnav: 164px;
+
+
+@mixin margPadTop {
+    margin-top: 20px;
+    padding-top: 15px;
+}
+
+@mixin central {
+    display: grid;
+    grid-area: c;
+    background-color: $bgc;
+    width: 550px;
+    margin: 10px 10px 10px 0;
+    padding: 15px 20px 15px 20px;
+    border-radius: 4px;
+
+    position: relative;
+
+}

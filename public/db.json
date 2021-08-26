@@ -1,0 +1,142 @@
+[
+  {
+    "user": {
+      "id": 0,
+      "fullname": "Jeanne Head",
+      "username": "Holloway Morales",
+      "avatarUrl": "https://source.unsplash.com/random/100x100",
+      "posts": [
+        {
+          "text": "Magna ullamco dolor enim voluptate in aliquip irure aliqua tempor nostrud mollit aliqua.",
+          "date": "2006-10-06T19:15:32.318Z",
+          "likes": 9,
+          "watches": 7
+        },
+        {
+          "text": "Voluptate est magna non nostrud eu cillum.",
+          "date": "1971-10-16T19:11:24.294Z",
+          "likes": 0,
+          "watches": 3
+        },
+        {
+          "text": "Ex id velit adipisicing tempor sunt veniam id nisi exercitation.",
+          "date": "1993-05-24T15:43:14.973Z",
+          "likes": 9,
+          "watches": 6
+        }
+      ]
+    }
+  },
+  {
+    "user": {
+      "id": 1,
+      "fullname": "Victoria Peck",
+      "username": "Aimee Pickett",
+      "avatarUrl": "https://source.unsplash.com/random/100x100",
+      "posts": [
+        {
+          "text": "Pariatur exercitation nisi tempor ad voluptate est eu sunt ullamco culpa.",
+          "date": "2012-11-04T05:33:44.212Z",
+          "likes": 1,
+          "watches": 6
+        },
+        {
+          "text": "Ad anim eu veniam voluptate duis anim quis id nostrud proident ut consectetur tempor.",
+          "date": "2009-04-29T11:12:17.860Z",
+          "likes": 10,
+          "watches": 9
+        },
+        {
+          "text": "Enim ut eu nisi sint reprehenderit laboris duis magna in adipisicing.",
+          "date": "1999-02-15T01:17:48.213Z",
+          "likes": 10,
+          "watches": 0
+        }
+      ]
+    }
+  },
+  {
+    "user": {
+      "id": 2,
+      "fullname": "Mindy Washington",
+      "username": "Sondra Moreno",
+      "avatarUrl": "https://source.unsplash.com/random/100x100",
+      "posts": [
+        {
+          "text": "Amet amet aliquip Lorem veniam ut sint eiusmod.",
+          "date": "1983-06-28T07:34:04.749Z",
+          "likes": 2,
+          "watches": 0
+        },
+        {
+          "text": "Sint nisi duis elit Lorem labore nisi cupidatat aute eu ullamco ex.",
+          "date": "2019-08-29T19:05:42.693Z",
+          "likes": 7,
+          "watches": 4
+        },
+        {
+          "text": "Cupidatat eiusmod sit ipsum reprehenderit minim veniam exercitation in commodo nulla.",
+          "date": "1970-09-19T03:24:51.174Z",
+          "likes": 1,
+          "watches": 2
+        }
+      ]
+    }
+  },
+  {
+    "user": {
+      "id": 3,
+      "fullname": "Stephanie Long",
+      "username": "Mcintosh Dotson",
+      "avatarUrl": "https://source.unsplash.com/random/100x100",
+      "posts": [
+        {
+          "text": "Mollit nulla non dolore et ipsum dolor ipsum consequat sint pariatur culpa exercitation reprehenderit anim.",
+          "date": "2015-05-19T15:06:51.338Z",
+          "likes": 2,
+          "watches": 7
+        },
+        {
+          "text": "Elit ex duis anim qui commodo non.",
+          "date": "2003-07-21T23:40:58.300Z",
+          "likes": 10,
+          "watches": 4
+        },
+        {
+          "text": "Laboris quis consectetur id pariatur velit consectetur incididunt.",
+          "date": "1987-07-20T12:08:45.073Z",
+          "likes": 0,
+          "watches": 2
+        }
+      ]
+    }
+  },
+  {
+    "user": {
+      "id": 4,
+      "fullname": "Yates Mcguire",
+      "username": "Benjamin Blevins",
+      "avatarUrl": "https://source.unsplash.com/random/100x100",
+      "posts": [
+        {
+          "text": "Nulla in magna in tempor dolore commodo.",
+          "date": "1989-04-26T13:36:46.745Z",
+          "likes": 1,
+          "watches": 0
+        },
+        {
+          "text": "Aliqua officia incididunt deserunt officia nostrud sunt.",
+          "date": "1976-10-15T20:05:15.582Z",
+          "likes": 10,
+          "watches": 5
+        },
+        {
+          "text": "Quis nostrud ipsum fugiat aliquip eu cupidatat Lorem commodo.",
+          "date": "1988-05-28T10:26:07.640Z",
+          "likes": 9,
+          "watches": 5
+        }
+      ]
+    }
+  }
+]

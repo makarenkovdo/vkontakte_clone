@@ -1,0 +1,17 @@
+@import "./../Scss/FeedMixins.scss";
+
+.rightNav {
+    display: grid;
+    grid-area: r;
+    background-color: $bgc;
+    width: 230px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    @include margPadTop;
+    position: sticky;
+    top: 30px;
+
+    height: 410px;
+
+
+}
