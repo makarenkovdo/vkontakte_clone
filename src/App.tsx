@@ -1,12 +1,13 @@
 import Auth from './PAGES/Auth'
 import Feed from './PAGES/Feed'
 import './App.css'
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch, NavLink } from 'react-router-dom';
 import { useMyDispatch, useMySelector } from './GLOBAL/Redux/Root/Store'
 // import { signIn_Action_SetSuccess } from './MODULES/Auth/Redux/SignIn/SignIn_Actions';
 // import { signUp_Action_SetSucess } from './MODULES/Auth/Redux/SignUp/SignUp_Actions';
 import { Action } from 'redux'
 import { signIn_setSuccess } from './MODULES/Auth/Redux/SignIn/SignIn_Slice';
+import Friends from './PAGES/Friends';
 
 
 
@@ -37,7 +38,8 @@ function App() {
 
       {signInState
         ? <Switch><Route path="/feed" component={Feed} />
-          <Route path="/" component={Feed} /></Switch>
+          <Route path="/" exact component={Feed} />
+          <Route path="/friends" component={Friends} /></Switch>
         : <Auth />
       }
 

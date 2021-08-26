@@ -22,7 +22,6 @@ export default function NewsMappingUi(): React.ReactElement {
 
     const loadingState = useMySelector(state => state.newsSlice.newsStatus)
     const stateArray = Object.values(newsItemsState) || ['loading']
-    console.log('stateArray', stateArray);
 
 
 
@@ -30,10 +29,8 @@ export default function NewsMappingUi(): React.ReactElement {
 
     function mappingPosts(stateArray: any) {
         stateArray = Object.values(newsItemsState) || ['loading']
-        console.log(stateArray);
 
         return (stateArray.reverse().map((el: any, i: number) => {
-            console.log(el.text)
 
             return (
                 <div className={styles.feedItem} key={i}>
@@ -53,7 +50,6 @@ export default function NewsMappingUi(): React.ReactElement {
     }
     const reselectorNewsItemsMapping = createSelector(selectorNew, (selectorNew) => mappingPosts(selectorNew))
     const memoItems = reselectorNewsItemsMapping(state)
-    console.log(memoItems);
 
 
 

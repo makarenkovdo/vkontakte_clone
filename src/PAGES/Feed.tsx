@@ -34,7 +34,7 @@ const Feed = (): React.ReactElement => {
     return (<div className={styles.feed}>
         <RightNav />
         <CreateNewsItemContainerUi />
-        <Stories />
+        {/* <Stories /> */}
         {isLoading
             ? <CircularProgress />
             :

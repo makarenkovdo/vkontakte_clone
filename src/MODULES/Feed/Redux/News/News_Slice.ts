@@ -14,6 +14,7 @@ export enum newsStatusInterface {
 interface interfaceInitialState {
     newsItems: interfaceNewsItems,
     newsStatus: newsStatusInterface,
+    postButtonVisibility: boolean
 }
 interface interfaceNewsItems {
     [key: string]: interfaceNewsItemsData
@@ -29,6 +30,8 @@ interface interfaceNewsItemsData {
 const initialState = {
     newsItems: {},
     newsStatus: newsStatusInterface.DISABLE,
+    postButtonVisibility: false,
+
 } as interfaceInitialState
 
 const news_Slice = createSlice({
@@ -47,12 +50,17 @@ const news_Slice = createSlice({
             state.newsStatus = newsStatusInterface.ERROR
         },
         news_getNewsList(state, action: PayloadAction<news_GetData_INTF>) {
-            console.log('inside Slice GET NEWS');
             state.newsStatus = newsStatusInterface.LOADING
         },
         news_postNewsItem(state, action: PayloadAction<news_GetData_INTF>) {
             console.log('inside news_postNewsItemrReducer');
             state.newsStatus = newsStatusInterface.LOADING
+        },
+        news_postButtonVisibility(state) {
+            state.postButtonVisibility = true
+        },
+        news_postButtonVisibilityOff(state) {
+            state.postButtonVisibility = false
         },
 
     }
@@ -69,5 +77,5 @@ const news_Slice = createSlice({
 
 // }
 
-export const { news_setNewsList, news_setError, news_getNewsList, news_postNewsItem } = news_Slice.actions
+export const { news_setNewsList, news_setError, news_getNewsList, news_postButtonVisibilityOff, news_postNewsItem, news_postButtonVisibility } = news_Slice.actions
 export default news_Slice.reducer

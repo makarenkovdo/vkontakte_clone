@@ -2,20 +2,23 @@ import styles from './CreateNewsItem.module.scss'
 import React, { useEffect } from 'react'
 import { useRef } from 'react'
 import { useMyDispatch, useMySelector } from "../../../../GLOBAL/Redux/Root/Store"
-import { TextareaAutosize } from '@material-ui/core';
+import { Button, TextareaAutosize } from '@material-ui/core';
 import { Icon28Camera } from '@vkontakte/icons';
-import { news_postNewsItem } from '../../Redux/News/News_Slice';
+import { news_postButtonVisibility, news_postButtonVisibilityOff, news_postNewsItem } from '../../Redux/News/News_Slice';
 import { selectorNewsLoadingStatus } from '../../Redux/News/News_Selectors';
 
 export default function CreateNewsItemContainerUi() {
     const inputRef = useRef() as React.MutableRefObject<HTMLTextAreaElement>;
     const dispatch = useMyDispatch()
     const NewsLoadingStatus = useMySelector(selectorNewsLoadingStatus)
+    const postButtonVisibility = useMySelector(state => state.newsSlice.postButtonVisibility)
 
 
     type inputHandler_INTF = () => void;
 
     const inputHandler: inputHandler_INTF = () => {
+        console.log('Inside inputHandler');
+
         const username = localStorage.getItem('displayName')
         const today = new Date();
         const postData = {
@@ -23,12 +26,23 @@ export default function CreateNewsItemContainerUi() {
             date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}/${today.getHours()}/${today.getMinutes()}`,
             image: ''
         }
-
         console.log(postData);
         dispatch(news_postNewsItem([username, postData]))
     }
+    const focusHandler: inputHandler_INTF = () => {
+        dispatch(news_postButtonVisibility())
 
-    if (NewsLoadingStatus === 'LOADED') {
+    }
+
+    const blurHandler: inputHandler_INTF = () => {
+        dispatch(news_postButtonVisibilityOff())
+
+    }
+
+
+
+    if (NewsLoadingStatus === 'LOADED' && inputRef.current?.value) {
+
         inputRef.current.value = ''
 
     }
@@ -36,23 +50,44 @@ export default function CreateNewsItemContainerUi() {
 
 
     return (
-        <span className={styles.whatsNew}>
+        <span className={styles.whatsNew} onMouseLeave={blurHandler}
+        >
             <section className={styles.icon}>
                 <Icon28Camera width={20} height={20} />
             </section>
             <section style={{ marginLeft: 12, }}>
                 <TextareaAutosize
                     ref={inputRef}
+                    onMouseEnter={focusHandler}
                     minRows={4}
-                    placeholder="Что у вас нового?"
+                    placeholder="What's new?"
                 />
-                <button className={styles.button} onClick={inputHandler}>Опубликовать</button>
+                {/* <Button
+                    variant="contained"
+                    component="label"
+                >
+                    Upload File
+                    <input
+                        type="file"
+                        hidden
+                    />
+                </Button> */}
+                {postButtonVisibility
+                    ? <button
+                        onMouseEnter={focusHandler}
+                        className={styles.button}
+                        onClick={inputHandler}
+                    >Post</button>
+                    : <div></div>
+                }
+
+
 
 
             </section>
 
 
-        </span>
+        </span >
     )
 
 }

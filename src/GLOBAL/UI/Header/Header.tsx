@@ -2,8 +2,12 @@ import styles from './Header.module.scss'
 import React from 'react'
 import { Icon28LogoVkColor } from '@vkontakte/icons';
 import { FormControl, InputLabel, Select } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 import { useMyDispatch } from '../../Redux/Root/Store';
 import { signIn_logOut } from '../../../MODULES/Auth/Redux/SignIn/SignIn_Slice';
+import HeaderProfileMenuUI from './ProfileMenu';
 
 
 function Header() {
@@ -24,7 +28,7 @@ function Header() {
                 style={{ fontSize: 15, paddingLeft: 5 }}>ВКОНТАКТЕ</strong></div>
             <input placeholder='Поиск' className={styles.input} type="text" />
             <div></div><div></div><div></div>
-            <div> <FormControl variant="filled" className=''>
+            {/* <div> <FormControl variant="filled" className=''>
                 <InputLabel htmlFor="filled-age-native-simple">{displayName}</InputLabel>
                 <Select
                     native
@@ -34,7 +38,9 @@ function Header() {
                     <option aria-label="None" value="" />
                     <option value={10}>LogOut</option>
                 </Select>
-            </FormControl></div>
+                
+            </FormControl></div> */}
+            <HeaderProfileMenuUI />
 
         </header >
 

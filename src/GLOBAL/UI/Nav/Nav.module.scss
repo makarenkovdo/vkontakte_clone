@@ -10,12 +10,19 @@ nav {
 
 }
 
+a {
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+}
+
 .navItem {
     display: grid;
 
     height: 30px;
     grid-template-columns: 1fr 8fr;
     cursor: pointer;
+    text-decoration: none;
 
     &:hover {
         background-color: rgb(230, 230, 235);
