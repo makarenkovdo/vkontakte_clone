@@ -2,6 +2,8 @@ Skills-stack in projects:
 
 BASE:
 React (reach-hooks, react-router-dom)
+
+
 Typescript (70% without any)
 Redux (with Redux-devtools)
 Redux-toolkit (slices/reselect/immer)
