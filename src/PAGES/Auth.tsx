@@ -1,6 +1,6 @@
-import styles from './../MODULES/Auth/UI/Scss/Auth.module.scss'
-import SignInContainerUi from '../MODULES/Auth/UI/SignInContainerUi'
-import SignUpContainerUi from '../MODULES/Auth/UI/SignUpContainerUi'
+import styles from './../modules/auth/components/scss/auth.module.scss'
+import SignInContainer from '../modules/auth/components/SignIn/SignInContainer'
+import SignUpContainer from '../modules/auth/components/SignUp/SignUpContainer'
 import { Icon28LogoVkColor } from '@vkontakte/icons'
 
 export default function Auth(): React.ReactElement {
@@ -14,8 +14,8 @@ export default function Auth(): React.ReactElement {
                 with a VK Combo subscription
             </h1><h2>30-day subscription for free after signing up</h2></div>
 
-            <SignInContainerUi />
-            <SignUpContainerUi />
+            <SignInContainer />
+            <SignUpContainer />
 
 
             <footer className={styles.button}>FOOTER</footer>
