@@ -1,6 +1,6 @@
 import styles from './../MODULES/Auth/UI/Scss/Auth.module.scss'
-import SignInContainerUi from '../MODULES/Auth/UI/SignInContainerUi'
-import SignUpContainerUi from '../MODULES/Auth/UI/SignUpContainerUi'
+import SignInContainerUi from '../modules/auth/components/SignIn/SignInContainerUi'
+import SignUpContainerUi from '../modules/auth/components/SignUp/SignUpContainerUi'
 import { Icon28LogoVkColor } from '@vkontakte/icons'
 
 export default function Auth(): React.ReactElement {

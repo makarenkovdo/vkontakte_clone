@@ -1,17 +1,14 @@
 import React from 'react'
-import NewsItemsContainerUi from '../MODULES/Feed/UI/NewsItems/NewsItemsContainerUi'
-import RightNav from '../MODULES/Feed/UI/RightNavBar/UI_RightNavBar'
-import Stories from '../MODULES/Feed/UI/Stories/UI_Stories'
-import CreateNewsItemContainerUi from '../MODULES/Feed/UI/CreateNewsItem/CreateNewsItemContainerUi'
-import Header from '../GLOBAL/UI/Header/Header'
-import Nav from '../GLOBAL/UI/Nav/Nav'
+import NewsItemsContainerUi from '../modules/feed/components/NewsItems/NewsItemsContainer'
+import RightNav from '../modules/feed/components/RightNavBar/RightNavBarContainer'
+import Stories from '../modules/feed/components/stories/storiesUi'
+import CreateNewsItemContainerUi from '../modules/feed/components/СreateNewsItem/СreateNewsItemContainer'
+import Header from '../global/components/Header/HeaderContainer'
+import Nav from '../global/components/Nav/NavContainer'
 import styles from './../MODULES/Feed/UI/Scss/Feed.module.scss'
-
-import { FriendsList } from '../MODULES/Friends/UI/FriendsListUi'
+import { FriendsList } from '../modules/friends/components/FriendsList'
 
 const Friends = (): React.ReactElement => {
-
-
     return (<div className={styles.feed}>
         <RightNav />
         {/* {isLoading
