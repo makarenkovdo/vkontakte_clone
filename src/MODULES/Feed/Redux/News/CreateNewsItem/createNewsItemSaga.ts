@@ -1,11 +1,12 @@
-import axios from 'axios';
 import { call, put, takeEvery } from 'redux-saga/effects'
-import { createNewsItemAxios } from '../createNewsItem/createNewsItemAxios';
 import { news_getNewsList, news_postNewsItem, news_setError, news_setNewsList } from '../newsSlice';
+import { createNewsItemAxios } from './createNewsItemAxios'
 
 // Our worker Saga: will perform the async increment task
-export function* getNewsItemsSagaWorker({ payload }: any) {
+function* createNewsItemSagaWorker({ payload }: any) {
+    //была ошибка, пришлось самому вот это делать: const data: Promise<PostsState['items']>
     try {
+        const NewsItem: news_GetData_INTF = yield call(createNewsItemAxios.post, payload);
         const NewsItems: news_GetData_INTF = yield call(createNewsItemAxios.get, payload);
         console.log(NewsItems.data);
 
@@ -16,14 +17,11 @@ export function* getNewsItemsSagaWorker({ payload }: any) {
 
 
 
-
 }
 
 // Our watcher Saga: spawn a new incrementAsync task on each INCREMENT_ASYNC
-export function* getNewsItemsSagaWatcher() {
-    console.log('inside GetNewsItems_SagaWatcher');
+export function* createNewsItemSagaWatcher() {
 
 
-
-    yield takeEvery(news_getNewsList, getNewsItemsSagaWorker)
+    yield takeEvery(news_postNewsItem, createNewsItemSagaWorker)
 }

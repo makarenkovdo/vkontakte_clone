@@ -1,32 +1,32 @@
 import axios from "axios";
-export const signupAxios = {
-    postAuth(signupInputDataArray: Array<any>): any {
+export const signUpAxios = {
+    postAuth(signUpInputDataArray: Array<any>): any {
         console.log('inside axios');
 
-        const signupInputData = {
-            email: signupInputDataArray[0],
-            password: signupInputDataArray[1],
-            displayName: signupInputDataArray[2],
+        const signUpInputData = {
+            email: signUpInputDataArray[0],
+            password: signUpInputDataArray[1],
+            displayName: signUpInputDataArray[2],
             returnSecureToken: true,
 
         }
-        console.log(signupInputData);
+        console.log(signUpInputData);
 
-        return axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signup?key=AIzaSyChKgEpaNreEua16dDDYmKWiNdikE2YD9A', signupInputData)
+        return axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyChKgEpaNreEua16dDDYmKWiNdikE2YD9A', signUpInputData)
 
 
     },
-    postDB(signupInputDataArray: Array<any>): any {
+    postDB(signUpInputDataArray: Array<any>): any {
         console.log('inside axios');
 
-        const signupInputData = {
-            email: signupInputDataArray[0],
-            password: signupInputDataArray[1],
-            displayName: signupInputDataArray[2],
+        const signUpInputData = {
+            email: signUpInputDataArray[0],
+            password: signUpInputDataArray[1],
+            displayName: signUpInputDataArray[2],
 
         }
-        console.log(signupInputData);
-        return axios.put(`https://vk-proj-dae58-default-rtdb.firebaseio.com/${signupInputData.displayName}.json`, signupInputData)
+        console.log(signUpInputData);
+        return axios.put(`https://vk-proj-dae58-default-rtdb.firebaseio.com/${signUpInputData.displayName}.json`, signUpInputData)
 
 
     }

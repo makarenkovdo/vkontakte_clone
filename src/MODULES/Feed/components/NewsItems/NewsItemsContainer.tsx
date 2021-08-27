@@ -1,5 +1,4 @@
-import styles from './../Scss/Feed.module.scss';
-import React, { Fragment } from 'react';
+import styles from './../scss/feed.module.scss';
 import NewsMappingUi from './NewsMapping';
 
 

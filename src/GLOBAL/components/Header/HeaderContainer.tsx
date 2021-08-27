@@ -1,6 +1,6 @@
 import styles from './header.module.scss'
 import { Icon28LogoVkColor } from '@vkontakte/icons';
-import HeaderProfileMenuUI from './HeaderProfileMenuUI';
+import HeaderProfileMenuUI from './HeaderProfileMenu';
 
 export default function Header() {
     return (

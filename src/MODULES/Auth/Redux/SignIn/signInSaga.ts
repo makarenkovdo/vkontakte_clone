@@ -1,26 +1,22 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 import { signInAxios } from "./signInAxios"
-import { signIn_postInputs, signIn_setError, signIn_setSuccess } from './signInSlice';
+import { signInPostInputs, signInSetError, signInSetSuccess } from './signInSlice';
 
 
 export function* signInSagaWorker({ payload }: any) {
-    console.log('inside auSaga_SignInWorker');
+    interface SignInWorkerResponseType {
+        data: {
+            displayName: string
+        }
+    }
     try {
-        const response: SignInWorker_response_INTF = yield call(signInAxios.post, payload);
-        console.log(response);
-
+        const response: SignInWorkerResponseType = yield call(signInAxios.post, payload);
         const displayName = response.data.displayName
         localStorage.setItem('displayName', displayName);
-        console.log('before the PUT');
-
-        yield put(signIn_setSuccess(displayName))
-        // window.location.reload();
-        // if (response.token)
-        console.log('after the PUT');
-
+        yield put(signInSetSuccess(displayName))
     } catch (error) {
         console.log('error');
-        put(signIn_setError())
+        put(signInSetError())
 
     }
 }
@@ -28,7 +24,7 @@ export function* signInSagaWorker({ payload }: any) {
 export function* signInSagaWatcher() {
     console.log('inside auSaga_SignInWatcher');
 
-    yield takeEvery(signIn_postInputs, signInSagaWorker)
+    yield takeEvery(signInPostInputs, signInSagaWorker)
 
 }
 

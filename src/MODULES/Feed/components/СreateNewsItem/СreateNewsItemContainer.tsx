@@ -1,4 +1,4 @@
-import styles from './CreateNewsItem.module.scss'
+import styles from './createNewsItem.module.scss'
 import React, { useEffect } from 'react'
 import { useRef } from 'react'
 import { useMyDispatch, useMySelector } from "../../../../global/rootRedux/store"

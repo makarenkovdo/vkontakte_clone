@@ -1,13 +1,10 @@
-import Auth from './PAGES/Auth'
-import Feed from './PAGES/Feed'
+import Auth from './pages/auth'
+import Feed from './pages/feed'
 import './App.css'
-import { Redirect, Route, Switch, NavLink } from 'react-router-dom';
-import { useMyDispatch, useMySelector } from './GLOBAL/Redux/Root/Store'
-// import { signIn_Action_SetSuccess } from './MODULES/Auth/Redux/SignIn/SignIn_Actions';
-// import { signUp_Action_SetSucess } from './MODULES/Auth/Redux/SignUp/SignUp_Actions';
-import { Action } from 'redux'
-import { signIn_setSuccess } from './MODULES/Auth/Redux/SignIn/SignIn_Slice';
-import Friends from './PAGES/Friends';
+import { Route, Switch } from 'react-router-dom';
+import { useMyDispatch, useMySelector } from './global/rootRedux/store'
+import { signInSetSuccess } from './modules/auth/redux/signIn/signInSlice';
+import Friends from './pages/friends';
 
 
 
@@ -15,38 +12,30 @@ import Friends from './PAGES/Friends';
 
 function App() {
   const dispatch = useMyDispatch()
-
-  const app_Dispatch_SignInCheck = () => {
+  const checkIfSignIn = () => {
     const displayName: string | null = localStorage.getItem('displayName')
     console.log(displayName);
 
     if (displayName) {
       console.log('send success');
 
-      dispatch(signIn_setSuccess(displayName))
+      dispatch(signInSetSuccess(displayName))
     }
 
 
   }
-  app_Dispatch_SignInCheck()
+  checkIfSignIn()
   const signInState = useMySelector(state => state.signInSlice.signInStatus)
   console.log(signInState);
 
   return (
     <div className='app'>
-
-
       {signInState
         ? <Switch><Route path="/feed" component={Feed} />
           <Route path="/" exact component={Feed} />
           <Route path="/friends" component={Friends} /></Switch>
         : <Auth />
       }
-
-
-
-
-
     </div>
   )
 }
