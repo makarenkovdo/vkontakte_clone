@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
-import { signUpPostInputs } from "../../redux/signUp/signUpSlice";
-import { useMyDispatch } from "../../../../global/rootRedux/store";
-import { signInPostInputs } from "../../redux/signIn/signInSlice";
+import { signUpPostInputs } from "../redux/signUp/signUpSlice";
+import { useMyDispatch } from "../../../global/rootRedux/store";
+import { signInPostInputs } from "../redux/signIn/signInSlice";
 
 export default function SignHoc(props: any) {
     const SignComponent = props.SignComponent
@@ -35,7 +35,8 @@ export default function SignHoc(props: any) {
 
     return (
         <>
-            <SignComponent emailRef={emailRef} loginRef={loginRef} passwRef={passwRef} buttonHandler={buttonHandler} />
+            <SignComponent emailRef={emailRef} passwRef={passwRef} loginRef={loginRef} buttonHandler={buttonHandler} />
+
         </>
     )
 }

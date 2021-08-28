@@ -1,7 +1,9 @@
 import styles from './../../scss/auth.module.scss'
 
 export default function AuthInputForms(props: any) {
-    const { emailRef, passwRef, loginRef, buttonHandler } = props
+    const { emailRef, passwRef, buttonHandler, loginRef, bgcolor, buttonText } = props
+    console.log(buttonText);
+
     return (
         <>
             <input
@@ -24,8 +26,8 @@ export default function AuthInputForms(props: any) {
                 placeholder="Password" />
             <button
                 onClick={buttonHandler}
-                style={{ backgroundColor: 'mediumseagreen', width: 300 }}
-            >Continue registration</button>
+                style={{ backgroundColor: bgcolor, width: 300 }}
+            >{buttonText}</button>
         </>
     )
 }

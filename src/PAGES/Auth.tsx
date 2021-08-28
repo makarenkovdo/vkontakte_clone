@@ -1,10 +1,11 @@
-import styles from './../modules/auth/components/scss/auth.module.scss'
+import styles from './../modules/auth/hoc/scss/auth.module.scss'
 // import SignInContainer from '../modules/auth/components/SignIn/SignInContainer'
 // import SignUpContainer from '../modules/auth/components/hoc/SignHoc'
 import { Icon28LogoVkColor } from '@vkontakte/icons'
-import SignIn from '../modules/auth/components/hoc/SignIn'
-import SignUp from '../modules/auth/components/hoc/SignUp'
-import SignHoc from '../modules/auth/components/hoc/SignHoc'
+import SignIn from '../modules/auth/hoc/components/SignIn'
+import SignUp from '../modules/auth/hoc/components/SignUp'
+import SignHoc from '../modules/auth/hoc/SignHoc'
+import AuthInputForms from '../modules/auth/hoc/components/AuthInputForm/AuthInputForm'
 
 export default function Auth(): React.ReactElement {
 
@@ -19,6 +20,8 @@ export default function Auth(): React.ReactElement {
 
             <SignHoc SignComponent={SignIn} />
             <SignHoc SignComponent={SignUp} />
+            {/* <SignHoc SignComponent={AuthInputForms} /> */}
+
 
 
 
