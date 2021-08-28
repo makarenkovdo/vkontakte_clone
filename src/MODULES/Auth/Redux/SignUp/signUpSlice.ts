@@ -1,5 +1,10 @@
 import { createSlice, PayloadAction, createAction } from "@reduxjs/toolkit";
-export const signUpPostInputs = createAction<[string, string, string]>('signUpPostInputs')
+export const signUpPostInputs = createAction<signUpPostInputsType>('signUpPostInputs')
+interface signUpPostInputsType {
+    email: string,
+    password: string,
+    displayName: string,
+}
 
 const signUpSlice = createSlice({
     name: 'signUpSliceState',

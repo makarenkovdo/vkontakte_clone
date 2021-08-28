@@ -16,8 +16,15 @@ export default function NewsMappingUi(): React.ReactElement {
 
 
 
-    function mappingPosts(stateArray: any) {
-        stateArray = Object.values(newsItemsState) || ['loading']
+    function mappingPosts(state: any) {
+        const object2 = {
+            date: '2021',
+            text: 'welcome',
+            image: ''
+        }
+        const stateArray = Object.entries(object2)
+        console.log(stateArray);
+
 
         return (stateArray.reverse().map((el: any, i: number) => {
 

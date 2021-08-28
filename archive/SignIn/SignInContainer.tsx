@@ -1,7 +1,7 @@
 import { useRef } from "react"
 import styles from './../scss/auth.module.scss'
-import { useMyDispatch } from "../../../../global/rootRedux/store";
-import { signInPostInputs } from "../../redux/signIn/signInSlice"
+import { useMyDispatch } from "../../src/global/rootRedux/store";
+import { signInPostInputs } from "../../src/modules/auth/redux/signIn/signInSlice"
 
 
 
@@ -17,7 +17,7 @@ export default function SignInContainerUi() {
         if (inputEmailSignInRef.current?.value && inputPasswSignInRef.current?.value) {
             const email = inputEmailSignInRef.current?.value
             const password = inputPasswSignInRef.current?.value
-            dispatch(signInPostInputs([email, password]))
+            // dispatch(signInPostInputs([email, password]))
         }
     }
 

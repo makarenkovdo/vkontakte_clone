@@ -6,20 +6,22 @@ import { useMyDispatch } from "../../../../global/rootRedux/store";
 export default function SignUpContainer() {
     type SignUpButtonHandlerType = () => void;
 
-    let inputEmailSignUpRef = useRef<HTMLInputElement | null>(null)
-    let inputLoginSignUpRef = useRef<HTMLInputElement | null>(null)
-    let inputPasswSignUpRef = useRef<HTMLInputElement | null>(null)
+    let emailRef = useRef<HTMLInputElement | null>(null)
+    let loginRef = useRef<HTMLInputElement | null>(null)
+    let passwRef = useRef<HTMLInputElement | null>(null)
 
     const dispatch = useMyDispatch()
 
     const SignUpButtonHandler: SignUpButtonHandlerType = () => {
-        if (inputEmailSignUpRef.current?.value && inputPasswSignUpRef.current?.value && inputLoginSignUpRef.current?.value) {
-            const email = inputEmailSignUpRef.current?.value
-            const password = inputPasswSignUpRef.current?.value
-            const displayName = inputLoginSignUpRef.current?.value
-            console.log('inside dispatch');
+        if (emailRef.current?.value && passwRef.current?.value && loginRef.current?.value) {
+            const [email, password, displayName] = [emailRef.current?.value, passwRef.current?.value, loginRef.current?.value]
+            const signUpInputData = {
+                email: email,
+                password: password,
+                displayName: displayName,
 
-            dispatch(signUpPostInputs([email, password, displayName]))
+            }
+            // dispatch(signUpPostInputs(signUpInputData))
 
 
         }
@@ -31,18 +33,18 @@ export default function SignUpContainer() {
         <div className={styles.reg}>
 
             <input
-                ref={inputEmailSignUpRef}
+                ref={emailRef}
                 className={styles.input}
                 type="text"
                 placeholder="Phone or email" />
             <input
-                ref={inputLoginSignUpRef}
+                ref={loginRef}
                 className={styles.input}
                 type="text"
                 placeholder="Login" />
 
             <input
-                ref={inputPasswSignUpRef}
+                ref={passwRef}
                 className={styles.input}
                 type="password"
                 placeholder="Password" />

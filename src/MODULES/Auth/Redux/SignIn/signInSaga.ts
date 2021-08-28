@@ -4,6 +4,8 @@ import { signInPostInputs, signInSetError, signInSetSuccess } from './signInSlic
 
 
 export function* signInSagaWorker({ payload }: any) {
+    console.log(payload);
+
     interface SignInWorkerResponseType {
         data: {
             displayName: string
@@ -11,6 +13,8 @@ export function* signInSagaWorker({ payload }: any) {
     }
     try {
         const response: SignInWorkerResponseType = yield call(signInAxios.post, payload);
+        console.log(response);
+
         const displayName = response.data.displayName
         localStorage.setItem('displayName', displayName);
         yield put(signInSetSuccess(displayName))
