@@ -1,7 +1,5 @@
 import React from 'react'
-import NewsItemsContainerUi from '../modules/feed/components/NewsItems/NewsItemsContainer'
 import RightNav from '../modules/feed/components/RightNavBar/RightNavBarContainer'
-import CreateNewsItemContainerUi from '../modules/feed/components/СreateNewsItem/СreateNewsItemContainer'
 import Header from '../global/components/Header/HeaderContainer'
 import Nav from '../global/components/Nav/NavContainer'
 import styles from './../modules/feed/components/scss/feed.module.scss'

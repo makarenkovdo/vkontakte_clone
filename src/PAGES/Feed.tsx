@@ -8,22 +8,22 @@ import styles from './../modules/feed/components/scss/feed.module.scss'
 import { useEffect } from 'react'
 import { useMyDispatch, useMySelector } from '../global/rootRedux/store'
 import { CircularProgress } from '@material-ui/core'
-import { news_getNewsList } from '../modules/feed/redux/news/newsSlice'
+import { newsGetNewsList } from '../modules/feed/redux/news/newsSlice'
 
 const Feed = (): React.ReactElement => {
     const dispatch = useMyDispatch();
-    const newsItemsState = useMySelector(state => state.newsSlice.newsItems)
+
     const loadingState = useMySelector(state => state.newsSlice.newsStatus)
     const displayName = useMySelector(state => state.signInSlice.displayName)
-    const isLoading = (loadingState == "LOADING")
+    const isLoading = (loadingState === "LOADING")
 
     useEffect(() => {
         document.title = "News"
     }, []);
 
     useEffect(() => {
-        dispatch(news_getNewsList([displayName]))
-    }, [])
+        dispatch(newsGetNewsList([displayName]))
+    }, [dispatch, displayName])
 
     return (<div className={styles.feed}>
         <RightNav />

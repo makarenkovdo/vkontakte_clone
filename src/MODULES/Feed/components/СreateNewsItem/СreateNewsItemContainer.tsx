@@ -1,10 +1,10 @@
 import styles from './createNewsItem.module.scss'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useRef } from 'react'
 import { useMyDispatch, useMySelector } from "../../../../global/rootRedux/store"
-import { Button, TextareaAutosize } from '@material-ui/core';
+import { TextareaAutosize } from '@material-ui/core';
 import { Icon28Camera } from '@vkontakte/icons';
-import { news_postButtonVisibility, news_postButtonVisibilityOff, news_postNewsItem } from '../../redux/news/newsSlice';
+import { newsPostButtonVisibility, newsPostButtonVisibilityOff, newsPostNewsItem } from '../../redux/news/newsSlice';
 import { selectorNewsLoadingStatus } from '../../redux/news/newsSelectors';
 
 export default function CreateNewsItemContainer() {
@@ -27,15 +27,15 @@ export default function CreateNewsItemContainer() {
             image: ''
         }
         console.log(postData);
-        dispatch(news_postNewsItem([username, postData]))
+        dispatch(newsPostNewsItem([username, postData]))
     }
     const focusHandler: inputHandler_INTF = () => {
-        dispatch(news_postButtonVisibility())
+        dispatch(newsPostButtonVisibility())
 
     }
 
     const blurHandler: inputHandler_INTF = () => {
-        dispatch(news_postButtonVisibilityOff())
+        dispatch(newsPostButtonVisibilityOff())
 
     }
 

@@ -1,6 +1,4 @@
-import { createSlice, PayloadAction, createAction } from "@reduxjs/toolkit";
-import { RootStateType } from "../../../../global/rootRedux/store";
-// export const selectNewsItems: Array<any> = (state: RootStateType) => state.newsSlice.newsItems
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export enum newsStatusInterface {
     LOADING = 'LOADING',
@@ -33,31 +31,31 @@ const initialState = {
 } as interfaceInitialState
 
 const newsSlice = createSlice({
-    name: 'news_SliceState',
+    name: 'newsSliceState',
     initialState,
     reducers: {
-        news_setNewsList(state, action: PayloadAction<any>) {
-            console.log('inside news_setNewsList');
+        newsSetNewsList(state, action: PayloadAction<any>) {
+            console.log('inside newsSetNewsList');
             console.log(action.payload);
             state.newsItems = action.payload
 
             state.newsStatus = newsStatusInterface.LOADED
 
         },
-        news_setError(state) {
+        newsSetError(state) {
             state.newsStatus = newsStatusInterface.ERROR
         },
-        news_getNewsList(state, action: PayloadAction<news_GetData_INTF>) {
+        newsGetNewsList(state, action: PayloadAction<news_GetData_INTF>) {
             state.newsStatus = newsStatusInterface.LOADING
         },
-        news_postNewsItem(state, action: PayloadAction<news_GetData_INTF>) {
-            console.log('inside news_postNewsItemrReducer');
+        newsPostNewsItem(state, action: PayloadAction<news_GetData_INTF>) {
+            console.log('inside newsPostNewsItemrReducer');
             state.newsStatus = newsStatusInterface.LOADING
         },
-        news_postButtonVisibility(state) {
+        newsPostButtonVisibility(state) {
             state.postButtonVisibility = true
         },
-        news_postButtonVisibilityOff(state) {
+        newsPostButtonVisibilityOff(state) {
             state.postButtonVisibility = false
         },
 
@@ -70,10 +68,10 @@ const newsSlice = createSlice({
 
 
 
-// interface news_Slice_INTF {
+// interface newsSlice_INTF {
 //     name: string,
 
 // }
 
-export const { news_setNewsList, news_setError, news_getNewsList, news_postButtonVisibilityOff, news_postNewsItem, news_postButtonVisibility } = newsSlice.actions
+export const { newsSetNewsList, newsSetError, newsGetNewsList, newsPostButtonVisibilityOff, newsPostNewsItem, newsPostButtonVisibility } = newsSlice.actions
 export default newsSlice.reducer

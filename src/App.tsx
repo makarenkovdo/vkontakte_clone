@@ -11,22 +11,18 @@ import Friends from './pages/friends';
 
 
 function App() {
+  const signInState = useMySelector(state => state.signInSlice.signInStatus)
   const dispatch = useMyDispatch()
+
   const checkIfSignIn = () => {
     const displayName: string | null = localStorage.getItem('displayName')
-    console.log(displayName);
-
     if (displayName) {
-      console.log('send success');
-
       dispatch(signInSetSuccess(displayName))
     }
 
 
   }
   checkIfSignIn()
-  const signInState = useMySelector(state => state.signInSlice.signInStatus)
-  console.log(signInState);
 
   return (
     <div className='app'>

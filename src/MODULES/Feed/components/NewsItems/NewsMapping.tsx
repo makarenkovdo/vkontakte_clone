@@ -1,11 +1,8 @@
 import styles from './newsItems.module.scss'
-import { RootStateType, AppDispatch } from '../../../../global/rootRedux/store'
-import { Modal } from '@material-ui/core'
-import { useMyDispatch, useMySelector } from '../../../../global/rootRedux/store'
-import { selectorNewsItems, } from '../../redux/news/newsSelectors'
-import { Icon28CommentOutline, Icon28LikeOutline, Icon28Profile, Icon28ShareOutline } from '@vkontakte/icons'
+import { RootStateType } from '../../../../global/rootRedux/store'
+import { useMySelector } from '../../../../global/rootRedux/store'
+import { Icon28CommentOutline, Icon28LikeOutline, Icon28ShareOutline } from '@vkontakte/icons'
 import { createSelector } from 'reselect'
-// import { selectNewsItems } from '../../Redux/News/News_Slice'
 
 
 
@@ -13,10 +10,7 @@ export default function NewsMappingUi(): React.ReactElement {
     const selectorNew = (state: RootStateType) => state.newsSlice.newsItems
     const newsItemsState = useMySelector(state => state.newsSlice.newsItems)
     const state = useMySelector(state => state)
-    const newsItemsState2 = useMySelector(selectorNew)
-
     const loadingState = useMySelector(state => state.newsSlice.newsStatus)
-    const stateArray = Object.values(newsItemsState) || ['loading']
 
 
 
@@ -53,7 +47,7 @@ export default function NewsMappingUi(): React.ReactElement {
     return (
         <div>
 
-            {loadingState == "LOADED"
+            {loadingState === "LOADED"
                 // ? mappingPosts(stateArray)
                 ? memoItems
                 : <div>Loading</div>
