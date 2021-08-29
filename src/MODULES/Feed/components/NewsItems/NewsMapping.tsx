@@ -9,6 +9,8 @@ import { createSelector } from 'reselect'
 export default function NewsMappingUi(): React.ReactElement {
     const selectorNew = (state: RootStateType) => state.newsSlice.newsItems
     const newsItemsState = useMySelector(state => state.newsSlice.newsItems)
+    console.log(newsItemsState);
+
     const state = useMySelector(state => state)
     const loadingState = useMySelector(state => state.newsSlice.newsStatus)
 
@@ -16,17 +18,25 @@ export default function NewsMappingUi(): React.ReactElement {
 
 
 
-    function mappingPosts(state: any) {
+    function mappingPosts(state: interfaceNewsItems) {
         const object2 = {
-            date: '2021',
-            text: 'welcome',
-            image: ''
+            welcomePost: {
+                date: '2021',
+                text: 'welcome',
+                image: ''
+            }
         }
-        const stateArray = Object.entries(object2)
+        let stateArray = Object.values(object2)
+
+        newsItemsState
+            ? stateArray = Object.values(newsItemsState)
+            : console.log('false');
+
         console.log(stateArray);
 
 
-        return (stateArray.reverse().map((el: any, i: number) => {
+
+        return (stateArray.reverse().map((el: postDataType, i: number) => {
 
             return (
                 <div className={styles.feedItem} key={i}>

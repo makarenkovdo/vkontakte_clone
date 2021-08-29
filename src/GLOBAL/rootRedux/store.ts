@@ -1,4 +1,4 @@
-import { compose, createStore, applyMiddleware } from 'redux'
+import { compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from './rootSaga';
 import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux'
@@ -6,7 +6,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import SignInSlice from '../../modules/auth/redux/signIn/signInSlice';
 import newsSlice from '../../modules/feed/redux/news/newsSlice';
 
-const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const sagaMiddleware = createSagaMiddleware()
 
 declare global {

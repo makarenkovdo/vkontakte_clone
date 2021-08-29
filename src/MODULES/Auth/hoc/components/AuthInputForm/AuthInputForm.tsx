@@ -1,8 +1,9 @@
 import styles from './../../scss/auth.module.scss'
 
-export default function AuthInputForms(props: any) {
+export default function AuthInputForms(props: SignHocToCompPropsType) {
+    console.log('props: ', props);
+
     const { emailRef, passwRef, buttonHandler, loginRef, bgcolor, buttonText } = props
-    console.log(buttonText);
 
     return (
         <>

@@ -5,8 +5,6 @@ import { getNewsItemsSagaWatcher } from "../../modules/feed/redux/news/getNewsIt
 import { createNewsItemSagaWatcher } from "../../modules/feed/redux/news/createNewsItem/createNewsItemSaga";
 
 export default function* rootSaga() {
-    console.log('rootSagas');
-
     yield all(
         [getNewsItemsSagaWatcher(), createNewsItemSagaWatcher(),
         signUpSagaWatcher(), signInSagaWatcher()]

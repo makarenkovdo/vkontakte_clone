@@ -20,7 +20,6 @@ export default function HeaderProfileMenu() {
 
     function LogOut(): void {
         localStorage.removeItem('displayName')
-        console.log('sucess logout');
         dispatch(signInLogOut())
     }
 

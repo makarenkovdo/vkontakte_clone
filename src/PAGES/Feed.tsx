@@ -22,7 +22,7 @@ const Feed = (): React.ReactElement => {
     }, []);
 
     useEffect(() => {
-        dispatch(newsGetNewsList([displayName]))
+        dispatch(newsGetNewsList(displayName))
     }, [dispatch, displayName])
 
     return (<div className={styles.feed}>

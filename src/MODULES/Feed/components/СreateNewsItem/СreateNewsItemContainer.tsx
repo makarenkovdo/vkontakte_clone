@@ -17,17 +17,18 @@ export default function CreateNewsItemContainer() {
     type inputHandler_INTF = () => void;
 
     const inputHandler: inputHandler_INTF = () => {
-        console.log('Inside inputHandler');
-
-        const username = localStorage.getItem('displayName')
+        const username: string = localStorage.getItem('displayName') || 'errorUser'
         const today = new Date();
         const postData = {
             text: inputRef.current?.value,
             date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}/${today.getHours()}/${today.getMinutes()}`,
             image: ''
-        }
-        console.log(postData);
-        dispatch(newsPostNewsItem([username, postData]))
+        } as postDataType
+        const postNewsItemPayload = {
+            username: username,
+            postData: postData,
+        } as newsPostNewsItemPayloadObjectType
+        dispatch(newsPostNewsItem(postNewsItemPayload))
     }
     const focusHandler: inputHandler_INTF = () => {
         dispatch(newsPostButtonVisibility())

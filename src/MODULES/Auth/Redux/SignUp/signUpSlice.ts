@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction, createAction } from "@reduxjs/toolkit";
+import { createSlice, createAction } from "@reduxjs/toolkit";
 export const signUpPostInputs = createAction<signUpPostInputsType>('signUpPostInputs')
 interface signUpPostInputsType {
     email: string,
@@ -13,7 +13,7 @@ const signUpSlice = createSlice({
         errorStatus: false,
     },
     reducers: {
-        signUpSetSuccess(state, action: PayloadAction<Array<string>>) {
+        signUpSetSuccess(state) {
             state.signUpStatus = true
         },
         signUpSetError(state) {

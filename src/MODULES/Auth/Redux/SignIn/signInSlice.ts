@@ -1,9 +1,6 @@
 import { createSlice, PayloadAction, createAction } from "@reduxjs/toolkit";
-export const signInPostInputs = createAction<signInPostInputsType>('signInPostInputs')
-interface signInPostInputsType {
-    email: string,
-    password: string,
-}
+export const signInPostInputs = createAction<signInInputDataType>('signInPostInputs')
+
 
 const signInSlice = createSlice({
     name: 'signInSliceState',
@@ -14,8 +11,6 @@ const signInSlice = createSlice({
     },
     reducers: {
         signInSetSuccess(state, action: PayloadAction<string>) {
-            console.log('sdf');
-
             state.displayName = action.payload
             state.signInStatus = true
         },
