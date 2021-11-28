@@ -1,7 +1,5 @@
 import axios from "axios";
 
-//это всё ПРИЁМ данных с БД
-
 export const createNewsItemAxios = {
 
     post(payload: newsPostNewsItemType) {

@@ -1,35 +1,22 @@
 import styles from './createNewsItem.module.scss'
 import React from 'react'
 import { useRef } from 'react'
-import { useMyDispatch, useMySelector } from "../../../../global/rootRedux/store"
+import { useMyDispatch, useMySelector } from "../../../global/rootRedux/store"
 import { TextareaAutosize } from '@material-ui/core';
 import { Icon28Camera } from '@vkontakte/icons';
-import { newsPostButtonVisibility, newsPostButtonVisibilityOff, newsPostNewsItem } from '../../redux/news/newsSlice';
-import { selectorNewsLoadingStatus } from '../../redux/news/newsSelectors';
+import { newsPostButtonVisibility, newsPostButtonVisibilityOff, newsPostNewsItem } from '../redux/newsSlice';
+import { selectorNewsLoadingStatus } from '../redux/newsSelectors';
+import { Modal } from '@mui/material';
 
-export default function CreateNewsItemContainer() {
+function NewsItemCreating() {
     const inputRef = useRef() as React.MutableRefObject<HTMLTextAreaElement>;
     const dispatch = useMyDispatch()
     const NewsLoadingStatus = useMySelector(selectorNewsLoadingStatus)
     const postButtonVisibility = useMySelector(state => state.newsSlice.postButtonVisibility)
 
 
-    type inputHandler_INTF = () => void;
 
-    const inputHandler: inputHandler_INTF = () => {
-        const username: string = localStorage.getItem('displayName') || 'errorUser'
-        const today = new Date();
-        const postData = {
-            text: inputRef.current?.value,
-            date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}/${today.getHours()}/${today.getMinutes()}`,
-            image: ''
-        } as postDataType
-        const postNewsItemPayload = {
-            username: username,
-            postData: postData,
-        } as newsPostNewsItemPayloadObjectType
-        dispatch(newsPostNewsItem(postNewsItemPayload))
-    }
+  
     const focusHandler: inputHandler_INTF = () => {
         dispatch(newsPostButtonVisibility())
 
@@ -63,16 +50,6 @@ export default function CreateNewsItemContainer() {
                     minRows={4}
                     placeholder="What's new?"
                 />
-                {/* <Button
-                    variant="contained"
-                    component="label"
-                >
-                    Upload File
-                    <input
-                        type="file"
-                        hidden
-                    />
-                </Button> */}
                 {postButtonVisibility
                     ? <button
                         onMouseEnter={focusHandler}
@@ -92,3 +69,5 @@ export default function CreateNewsItemContainer() {
     )
 
 }
+
+export default NewsItemCreating

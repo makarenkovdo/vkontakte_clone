@@ -2,9 +2,9 @@ import React, { useRef } from "react"
 import { signUpPostInputs } from "../redux/signUp/signUpSlice";
 import { useMyDispatch } from "../../../global/rootRedux/store";
 import { signInPostInputs } from "../redux/signIn/signInSlice";
-import SignUp from "./components/SignUp";
+import SignUp from "./SignHOC/SignUp";
 
-export default function SignHoc(props: signHocPropsType) {
+function SignHOC(props: signHocPropsType) {
     console.log(props);
 
     const SignComponent = props.SignComponent
@@ -56,3 +56,4 @@ export default function SignHoc(props: signHocPropsType) {
 
 
 
+export default SignHOC

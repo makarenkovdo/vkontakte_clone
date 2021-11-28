@@ -12,7 +12,8 @@ function Nav() {
     return (<nav>
         <div className={styles.navItem}><section className={styles.icon}>
             <Icon28Profile width={19} height={19} /></section>
-            <section>My profile</section></div>
+            {/* <section><NavLink to="/profile">My profile</NavLink></section></div> */}
+            <section><NavLink to="/">My profile</NavLink></section></div>
 
         <div className={styles.navItem}><section className={styles.icon}>
             <Icon24NewsfeedOutline width={19} height={19} /></section>
@@ -24,7 +25,8 @@ function Nav() {
 
         <div className={styles.navItem}><section className={styles.icon}>
             <Icon20MessageOutline width={19} height={19} /></section>
-            <section><NavLink to="/friends">Friends</NavLink></section></div>
+            {/* <section><NavLink to="/friends">Friends</NavLink></section></div> */}
+            <section><NavLink to="/">Friends</NavLink></section></div>
 
 
 

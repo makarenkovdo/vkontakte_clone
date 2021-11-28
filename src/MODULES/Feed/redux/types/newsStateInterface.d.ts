@@ -2,9 +2,6 @@ declare global {
 
     //newsSlice
 
-
-
-
     //
     interface interfaceInitialState {
         newsItems: interfaceNewsItems,

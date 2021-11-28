@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import { useMyDispatch, useMySelector } from './global/rootRedux/store'
 import { signInSetSuccess } from './modules/auth/redux/signIn/signInSlice';
 import Friends from './pages/friends';
+import { Profile } from './pages/profile';
 
 
 
@@ -29,7 +30,9 @@ function App() {
       {signInState
         ? <Switch><Route path="/feed" component={Feed} />
           <Route path="/" exact component={Feed} />
-          <Route path="/friends" component={Friends} /></Switch>
+          <Route path="/friends" component={Friends} />
+          <Route path="/profile" component={Profile} /></Switch>
+
         : <Auth />
       }
     </div>

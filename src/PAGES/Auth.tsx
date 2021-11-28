@@ -5,14 +5,13 @@ import { Icon28LogoVkColor } from '@vkontakte/icons'
 import SignIn from '../modules/auth/hoc/components/SignIn'
 import SignUp from '../modules/auth/hoc/components/SignUp'
 import SignHoc from '../modules/auth/hoc/SignHoc'
-import AuthInputForms from '../modules/auth/hoc/components/AuthInputForm/AuthInputForm'
 
 export default function Auth(): React.ReactElement {
 
     return (
         <div className={styles.container}>
 
-            {/* TODO: to seperated component */}
+            {/* TODO: move to separated component */}
             <header className={styles.header}><div ><Icon28LogoVkColor width={32} height={32} /></div></header>
             <div className={styles.main}><h1>Listen to ad-free music
                 with a VK Combo subscription

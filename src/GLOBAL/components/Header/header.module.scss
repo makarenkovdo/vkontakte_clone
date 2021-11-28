@@ -1,4 +1,8 @@
 // @import './../../scss/FeedMixins';
+@font-face {
+    font-family: 'VK';
+    src: local('VK'), url('../../../assets/fonts/VKSansMedium.ttf') format('ttf');
+  }
 
 .header {
     height: 45px;
@@ -21,6 +25,7 @@
     height: 25px;
     color: white;
     padding: 0 0 15px 0;
+    font-family: VK;
 }
 
 .input {

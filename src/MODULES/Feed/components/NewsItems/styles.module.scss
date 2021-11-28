@@ -1,0 +1,43 @@
+@import "./../scss/feedMixins.scss";
+
+
+.feedItem {
+    @include central;
+    grid-area: c3;
+    scroll-behavior: smooth;
+    scroll-snap-type: mandatory;
+    scroll-margin: 100px;
+    .avatar {
+        border: 0px solid transparent;
+        img {
+            border-radius: 50px;
+        }
+    }
+
+
+
+}
+.newsItemFooter {
+    display: grid;
+    grid-template-columns: repeat(3, max-content) 1fr;
+    column-gap: 20px;
+    .likeBox {
+        display: grid;
+        grid-template-columns: max-content max-content;
+        align-items: center;
+    }
+    .shareBox {
+        display: grid;
+        grid-template-columns: max-content max-content;
+        align-items: center;
+
+    }
+}
+
+.newsItemHeader {
+    display: grid;
+    grid-template-columns: repeat(3, max-content) 1fr;
+    column-gap: 20px;
+    align-items: center;
+
+}

@@ -1,0 +1,128 @@
+@mixin central {
+    display: grid;
+    background-color: white;
+    width: 230px;
+    margin: 10px 10px 10px 0;
+    padding: 15px 20px 15px 20px;
+    border-radius: 4px;
+
+}
+
+@mixin right {
+    display: grid;
+    background-color: white;
+    width: 550px;
+    margin: 10px 10px 10px 0;
+    padding: 15px 20px 15px 20px;
+    border-radius: 4px;
+
+}
+
+.pageContainer {
+    background-color: #edeef0;
+    display: grid;
+    grid-template-areas:
+        "h h h"
+        "l central right";
+
+}
+
+.centralForms {
+    display: grid;
+    grid-template-areas:
+        "av"
+        "fr"
+        "foll";
+
+    position: relative;
+
+
+}
+
+.rightForms {
+    display: grid;
+    grid-area: right;
+    grid-template-areas:
+        "pi"
+        "gl"
+        "pn"
+        "on";
+    position: relative;
+
+
+}
+
+.avatar {
+    grid-area: av;
+    height: 420px;
+    @include central;
+    position: relative;
+
+}
+
+.profile {
+    @include right;
+    height: 260px;
+    grid-area: pi;
+    grid-template-areas:
+        "pi1"
+        "pi2"
+        "pi3";
+
+
+}
+
+.profile1 {
+    display: grid;
+    grid-area: pi1;
+    height: 80px;
+    position: relative;
+}
+
+.profile2 {
+    display: grid;
+    grid-area: pi2;
+    height: 100px;
+}
+
+.profile3 {
+    display: grid;
+    grid-area: pi3;
+    height: 70px;
+    justify-items: center;
+}
+
+.gallery {
+    @include right;
+    height: 260px;
+    grid-area: gl;
+
+}
+
+.friendlist {
+    @include central;
+    height: 260px;
+    grid-area: fr;
+
+}
+
+.postnews {
+    @include right;
+    height: 260px;
+    grid-area: pn;
+
+}
+
+.ownnews {
+    @include right;
+    height: 260px;
+    grid-area: on;
+
+}
+
+.following {
+    @include central;
+    height: 260px;
+    grid-area: foll;
+
+}
